@@ -1,0 +1,10 @@
+<p>employ-search works!</p>
+<p>
+    Enter Employ No </p>
+    <input type="number" name="empno" [(ngModel)]="empno" /> 
+    <br/><br/>
+    <input type="button" value="Search" (click)="search()" /> 
+    <p> {{ (employ | async)?.name}} </p>
+    <p> {{ (employ | async)?.dept}} </p>
+    <p> {{ (employ | async)?.desig}} </p>
+    <p> {{ (employ | async)?.basic}} </p>
