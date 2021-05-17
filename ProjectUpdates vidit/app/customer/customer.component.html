@@ -1,0 +1,37 @@
+<p>customer works!</p>
+<form #customerForm="ngForm" (ngSubmit)="insert(customerForm)">
+   Customer No :
+    <input type="number" name="cus_id" 
+            [(ngModel)]="customer.cus_id" required #cus_id="ngModel" /> <br/><br/>
+    <div *ngIf="cus_id.invalid && customerForm.submitted && !isValid"> 
+        <h6 style="color: red">Please Enter custId...</h6>
+       </div> 
+       Customer Name :
+       <input type="text" name="cus_name" 
+               [(ngModel)]="customer.cus_name" required #cus_name="ngModel" /> <br/><br/>
+       <div *ngIf="cus_name.invalid && customerForm.submitted && !isValid"> 
+           <h6 style="color: red">Please Enter custName...</h6>
+          </div> 
+          Customer  cusEmail:
+          <input type="text" name="cus_email" 
+                  [(ngModel)]="customer.cus_email" required #cus_email="ngModel" /> <br/><br/>
+          <div *ngIf="cus_email.invalid && customerForm.submitted && !isValid"> 
+              <h6 style="color: red">Please Enter cusEmail...</h6>
+             </div> 
+             Customer cusMobile :
+             <input type="text" name="cus_mobile" 
+                     [(ngModel)]="customer.cus_mobile" required #cus_mobile="ngModel" /> <br/><br/>
+             <div *ngIf="cus_mobile.invalid && customerForm.submitted && !isValid"> 
+                 <h6 style="color: red">Please Enter cusMobile...</h6>
+                </div> 
+                Customer cusAddress :
+                <input type="number" name="cus_address" 
+                        [(ngModel)]="customer.cus_address" required #cus_address="ngModel" /> <br/><br/>
+                <div *ngIf="cus_address.invalid && customerForm.submitted && !isValid"> 
+                    <h6 style="color: red">Please Enter cusAddress...</h6>
+                   </div> 
+                           
+
+       <input type="submit" value="Insert" />
+       <br/><br/>
+       {{msg}}
